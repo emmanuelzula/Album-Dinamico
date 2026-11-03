@@ -1,0 +1,137 @@
+:root {
+  --bg: #1f2430;
+  --panel: #2b3142;
+  --text: #f1f1f1;
+  --muted: #a9b0c3;
+  --accent: #e74c3c;
+  --ok: #27ae60;
+  --err: #c0392b;
+  --radius: 10px;
+
+  /* Alto que ocupa todo lo que NO es el álbum (barra superior, márgenes, botones de página).
+     El álbum usa el resto del alto de la ventana. Ajustar si cambia el diseño. */
+  --chrome: 200px;
+  /* Proporción de dos páginas abiertas: (2 x 15 cm) / 21 cm */
+  --spread-ratio: 1.4286;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ---------- barra superior ---------- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: var(--panel);
+}
+.topbar h1 { margin: 0; font-size: 1.2rem; }
+.counter { text-align: right; }
+.counter-label { display: block; font-size: .7rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.counter strong { font-size: 1.2rem; }
+
+/* ---------- layout ---------- */
+.layout {
+  display: grid;
+  grid-template-columns: 1fr clamp(260px, 18vw, 340px);
+  gap: 20px;
+  padding: 20px;
+  max-width: 2200px;
+  margin: 0 auto;
+}
+@media (max-width: 800px) {
+  .layout { grid-template-columns: 1fr; padding: 12px; }
+  .book-area { padding: 20px 8px 0; max-width: none; }
+}
+
+/* La hoja que se curva o gira se sale unos píxeles del álbum. Este contenedor recorta lo
+   que sobresale (con margen para que no se corte la sombra) para que no aparezca la barra
+   de desplazamiento del navegador. */
+.book-area {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 28px 28px 0;
+  overflow: hidden;
+
+  /* El flipbook toma su tamaño de ESTE contenedor: ocupa todo el ancho disponible, pero sin
+     pasar del alto de la ventana (alto disponible x proporción de las dos páginas, más el
+     margen lateral). Así se adapta a cualquier pantalla. */
+  width: 100%;
+  max-width: calc((100vh - var(--chrome)) * var(--spread-ratio) + 56px);
+  max-width: calc((100dvh - var(--chrome)) * var(--spread-ratio) + 56px);
+  justify-self: center;
+}
+.book { width: 100%; }
+
+.pager { display: flex; align-items: center; gap: 16px; }
+.pager button {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 0; background: var(--panel); color: var(--text); font-size: 1.2rem; cursor: pointer;
+}
+.pager button:hover { background: #3a4259; }
+#page-label { min-width: 130px; text-align: center; color: var(--muted); }
+
+/* ---------- páginas del flipbook ---------- */
+.page { background: #faf5e8; overflow: hidden; }
+.page-inner { position: relative; width: 100%; height: 100%; }
+.page-bg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; user-select: none; }
+
+/* ---------- estampas ---------- */
+/* Las estampas sin obtener NO se pintan (display:none): así no pueden aparecer
+   durante el volteo 3D de la página. Sin transiciones, solo la animación "pop". */
+.sticker {
+  position: absolute;
+  display: none;
+  pointer-events: none;
+}
+.sticker.owned { display: block; }
+.sticker img { width: 100%; height: 100%; display: block; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,.35); user-select: none; }
+.sticker.pop { animation: pop .6s ease; }
+@keyframes pop {
+  0%   { transform: scale(2.2) rotate(-8deg); opacity: 0; }
+  60%  { transform: scale(.95) rotate(2deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+.badge {
+  position: absolute; right: -6px; top: -8px;
+  background: var(--accent); color: #fff; font-size: .7rem; font-weight: 700;
+  padding: 2px 6px; border-radius: 999px;
+}
+.badge[hidden] { display: none; }
+
+/* ---------- panel lateral ---------- */
+.panel { background: var(--panel); border-radius: var(--radius); padding: 18px; align-self: start; }
+.panel h2 { margin: 0 0 10px; font-size: .95rem; color: var(--muted); text-transform: uppercase; letter-spacing: .05em; }
+.panel h2:not(:first-child) { margin-top: 22px; }
+
+#redeem-form { display: flex; gap: 8px; }
+#code-input {
+  flex: 1; min-width: 0; padding: 10px; border-radius: 8px; border: 1px solid #455; background: #1f2430; color: var(--text);
+  text-transform: uppercase;
+}
+.panel button {
+  padding: 10px 14px; border: 0; border-radius: 8px; cursor: pointer; font-weight: 600; color: #fff; background: var(--accent);
+}
+.panel button.secondary { width: 100%; background: #3a4259; margin-bottom: 8px; }
+.panel button.danger { width: 100%; background: transparent; border: 1px solid var(--err); color: #ff8a7d; }
+.hint { color: var(--muted); font-size: .8rem; line-height: 1.4; margin-top: 18px; }
+code { background: #1f2430; padding: 1px 5px; border-radius: 4px; }
+
+/* ---------- aviso ---------- */
+.toast {
+  position: fixed; left: 50%; bottom: 24px; transform: translate(-50%, 20px);
+  background: var(--ok); color: #fff; padding: 12px 20px; border-radius: 999px; font-weight: 600;
+  opacity: 0; pointer-events: none; transition: opacity .25s, transform .25s; max-width: 90vw; text-align: center;
+}
+.toast.error { background: var(--err); }
+.toast.visible { opacity: 1; transform: translate(-50%, 0); }

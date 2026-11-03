@@ -1,0 +1,496 @@
+{
+  "page_size_cm": [
+    15.0,
+    21.0
+  ],
+  "stickers": [
+    {
+      "id": 1,
+      "page": 1,
+      "slot": 1,
+      "file": "stickers/sticker-01.png",
+      "x_pct": 13.333,
+      "y_pct": 16.667,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 2,
+      "page": 1,
+      "slot": 2,
+      "file": "stickers/sticker-02.png",
+      "x_pct": 53.333,
+      "y_pct": 16.667,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 3,
+      "page": 1,
+      "slot": 3,
+      "file": "stickers/sticker-03.png",
+      "x_pct": 13.333,
+      "y_pct": 37.619,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 4,
+      "page": 1,
+      "slot": 4,
+      "file": "stickers/sticker-04.png",
+      "x_pct": 53.333,
+      "y_pct": 37.619,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 5,
+      "page": 1,
+      "slot": 5,
+      "file": "stickers/sticker-05.png",
+      "x_pct": 13.333,
+      "y_pct": 58.571,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 6,
+      "page": 1,
+      "slot": 6,
+      "file": "stickers/sticker-06.png",
+      "x_pct": 53.333,
+      "y_pct": 58.571,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 7,
+      "page": 1,
+      "slot": 7,
+      "file": "stickers/sticker-07.png",
+      "x_pct": 13.333,
+      "y_pct": 79.524,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 8,
+      "page": 1,
+      "slot": 8,
+      "file": "stickers/sticker-08.png",
+      "x_pct": 53.333,
+      "y_pct": 79.524,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 9,
+      "page": 2,
+      "slot": 1,
+      "file": "stickers/sticker-09.png",
+      "x_pct": 13.333,
+      "y_pct": 16.667,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 10,
+      "page": 2,
+      "slot": 2,
+      "file": "stickers/sticker-10.png",
+      "x_pct": 53.333,
+      "y_pct": 16.667,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 11,
+      "page": 2,
+      "slot": 3,
+      "file": "stickers/sticker-11.png",
+      "x_pct": 13.333,
+      "y_pct": 37.619,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 12,
+      "page": 2,
+      "slot": 4,
+      "file": "stickers/sticker-12.png",
+      "x_pct": 53.333,
+      "y_pct": 37.619,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 13,
+      "page": 2,
+      "slot": 5,
+      "file": "stickers/sticker-13.png",
+      "x_pct": 13.333,
+      "y_pct": 58.571,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 14,
+      "page": 2,
+      "slot": 6,
+      "file": "stickers/sticker-14.png",
+      "x_pct": 53.333,
+      "y_pct": 58.571,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 15,
+      "page": 2,
+      "slot": 7,
+      "file": "stickers/sticker-15.png",
+      "x_pct": 13.333,
+      "y_pct": 79.524,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 16,
+      "page": 2,
+      "slot": 8,
+      "file": "stickers/sticker-16.png",
+      "x_pct": 53.333,
+      "y_pct": 79.524,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 17,
+      "page": 3,
+      "slot": 1,
+      "file": "stickers/sticker-17.png",
+      "x_pct": 13.333,
+      "y_pct": 16.667,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 18,
+      "page": 3,
+      "slot": 2,
+      "file": "stickers/sticker-18.png",
+      "x_pct": 53.333,
+      "y_pct": 16.667,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 19,
+      "page": 3,
+      "slot": 3,
+      "file": "stickers/sticker-19.png",
+      "x_pct": 13.333,
+      "y_pct": 37.619,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 20,
+      "page": 3,
+      "slot": 4,
+      "file": "stickers/sticker-20.png",
+      "x_pct": 53.333,
+      "y_pct": 37.619,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 21,
+      "page": 3,
+      "slot": 5,
+      "file": "stickers/sticker-21.png",
+      "x_pct": 13.333,
+      "y_pct": 58.571,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 22,
+      "page": 3,
+      "slot": 6,
+      "file": "stickers/sticker-22.png",
+      "x_pct": 53.333,
+      "y_pct": 58.571,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 23,
+      "page": 3,
+      "slot": 7,
+      "file": "stickers/sticker-23.png",
+      "x_pct": 13.333,
+      "y_pct": 79.524,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 24,
+      "page": 3,
+      "slot": 8,
+      "file": "stickers/sticker-24.png",
+      "x_pct": 53.333,
+      "y_pct": 79.524,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 25,
+      "page": 4,
+      "slot": 1,
+      "file": "stickers/sticker-25.png",
+      "x_pct": 13.333,
+      "y_pct": 16.667,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 26,
+      "page": 4,
+      "slot": 2,
+      "file": "stickers/sticker-26.png",
+      "x_pct": 53.333,
+      "y_pct": 16.667,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 27,
+      "page": 4,
+      "slot": 3,
+      "file": "stickers/sticker-27.png",
+      "x_pct": 13.333,
+      "y_pct": 37.619,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 28,
+      "page": 4,
+      "slot": 4,
+      "file": "stickers/sticker-28.png",
+      "x_pct": 53.333,
+      "y_pct": 37.619,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 29,
+      "page": 4,
+      "slot": 5,
+      "file": "stickers/sticker-29.png",
+      "x_pct": 13.333,
+      "y_pct": 58.571,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 30,
+      "page": 4,
+      "slot": 6,
+      "file": "stickers/sticker-30.png",
+      "x_pct": 53.333,
+      "y_pct": 58.571,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 31,
+      "page": 4,
+      "slot": 7,
+      "file": "stickers/sticker-31.png",
+      "x_pct": 13.333,
+      "y_pct": 79.524,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 32,
+      "page": 4,
+      "slot": 8,
+      "file": "stickers/sticker-32.png",
+      "x_pct": 53.333,
+      "y_pct": 79.524,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 33,
+      "page": 5,
+      "slot": 1,
+      "file": "stickers/sticker-33.png",
+      "x_pct": 13.333,
+      "y_pct": 16.667,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 34,
+      "page": 5,
+      "slot": 2,
+      "file": "stickers/sticker-34.png",
+      "x_pct": 53.333,
+      "y_pct": 16.667,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 35,
+      "page": 5,
+      "slot": 3,
+      "file": "stickers/sticker-35.png",
+      "x_pct": 13.333,
+      "y_pct": 37.619,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 36,
+      "page": 5,
+      "slot": 4,
+      "file": "stickers/sticker-36.png",
+      "x_pct": 53.333,
+      "y_pct": 37.619,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 37,
+      "page": 5,
+      "slot": 5,
+      "file": "stickers/sticker-37.png",
+      "x_pct": 13.333,
+      "y_pct": 58.571,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 38,
+      "page": 5,
+      "slot": 6,
+      "file": "stickers/sticker-38.png",
+      "x_pct": 53.333,
+      "y_pct": 58.571,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 39,
+      "page": 5,
+      "slot": 7,
+      "file": "stickers/sticker-39.png",
+      "x_pct": 13.333,
+      "y_pct": 79.524,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 40,
+      "page": 5,
+      "slot": 8,
+      "file": "stickers/sticker-40.png",
+      "x_pct": 53.333,
+      "y_pct": 79.524,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 41,
+      "page": 6,
+      "slot": 1,
+      "file": "stickers/sticker-41.png",
+      "x_pct": 13.333,
+      "y_pct": 16.667,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 42,
+      "page": 6,
+      "slot": 2,
+      "file": "stickers/sticker-42.png",
+      "x_pct": 53.333,
+      "y_pct": 16.667,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 43,
+      "page": 6,
+      "slot": 3,
+      "file": "stickers/sticker-43.png",
+      "x_pct": 13.333,
+      "y_pct": 37.619,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 44,
+      "page": 6,
+      "slot": 4,
+      "file": "stickers/sticker-44.png",
+      "x_pct": 53.333,
+      "y_pct": 37.619,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 45,
+      "page": 6,
+      "slot": 5,
+      "file": "stickers/sticker-45.png",
+      "x_pct": 13.333,
+      "y_pct": 58.571,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 46,
+      "page": 6,
+      "slot": 6,
+      "file": "stickers/sticker-46.png",
+      "x_pct": 53.333,
+      "y_pct": 58.571,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 47,
+      "page": 6,
+      "slot": 7,
+      "file": "stickers/sticker-47.png",
+      "x_pct": 13.333,
+      "y_pct": 79.524,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    },
+    {
+      "id": 48,
+      "page": 6,
+      "slot": 8,
+      "file": "stickers/sticker-48.png",
+      "x_pct": 53.333,
+      "y_pct": 79.524,
+      "w_pct": 33.333,
+      "h_pct": 16.667
+    }
+  ],
+  "pages": [
+    "pages/page-01.png",
+    "pages/page-02.png",
+    "pages/page-03.png",
+    "pages/page-04.png",
+    "pages/page-05.png",
+    "pages/page-06.png"
+  ]
+}

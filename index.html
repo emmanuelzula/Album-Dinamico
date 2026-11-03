@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Álbum Dinámico · Prototipo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Álbum Dinámico</h1>
+    <div class="counter" title="Estampas distintas obtenidas">
+      <span class="counter-label">Estampas</span>
+      <strong id="count">0 / 0</strong>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="book-area">
+      <div id="book" class="book"></div>
+      <nav class="pager">
+        <button id="btn-prev" type="button" aria-label="Página anterior">←</button>
+        <span id="page-label">Página 1</span>
+        <button id="btn-next" type="button" aria-label="Página siguiente">→</button>
+      </nav>
+    </section>
+
+    <aside class="panel">
+      <h2>Canjear código</h2>
+      <form id="redeem-form" autocomplete="off">
+        <input id="code-input" type="text" placeholder="Ej. PROTO-01" aria-label="Código">
+        <button type="submit">Canjear</button>
+      </form>
+
+      <h2>Herramientas de prueba</h2>
+      <button id="btn-random" type="button" class="secondary">Ganar estampa al azar</button>
+      <button id="btn-reset" type="button" class="danger">Reiniciar álbum</button>
+
+      <p class="hint">Los códigos de prueba son <code>PROTO-01</code> a <code>PROTO-48</code> (uno por estampa, un solo uso).</p>
+    </aside>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/vendor/page-flip.browser.js"></script>
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
