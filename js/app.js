@@ -14,9 +14,11 @@ const els = {
   code: $("code-input"),
   random: $("btn-random"),
   reset: $("btn-reset"),
+  hint: $("hint"),
   toast: $("toast"),
 };
 
+let pageSize = [1, 1];        // tamaño en píxeles de las imágenes de página (stickers.json)
 let stickers = [];            // lista de estampas (stickers.json)
 let pagesList = [];           // rutas de imágenes de página
 let stickerEls = new Map();   // id -> { img, badge }
@@ -67,6 +69,7 @@ function buildPages() {
         img.src = assetUrl(s.file);
         img.alt = `Estampa ${s.id}`;
         img.draggable = false;
+        img.style.objectFit = CONFIG.stickerFit;
 
         const badge = document.createElement("span");
         badge.className = "badge";
@@ -80,10 +83,15 @@ function buildPages() {
     els.book.appendChild(page);
   });
 
+  // Todas las medidas del flipbook salen de la proporción real de las imágenes
+  const ratio = pageSize[1] / pageSize[0]; // alto / ancho de una página
+  const baseW = CONFIG.pageBaseWidth;
   pageFlip = new St.PageFlip(els.book, {
-    width: CONFIG.page.width,
-    height: CONFIG.page.height,
     ...CONFIG.flip,
+    width: baseW,
+    height: Math.round(baseW * ratio),
+    minHeight: Math.round(CONFIG.flip.minWidth * ratio),
+    maxHeight: Math.round(CONFIG.flip.maxWidth * ratio),
   });
   pageFlip.loadFromHTML(els.book.querySelectorAll(".page"));
   pageFlip.on("flip", updatePageLabel);
@@ -91,8 +99,12 @@ function buildPages() {
 }
 
 function updatePageLabel() {
-  const current = pageFlip.getCurrentPageIndex() + 1;
-  els.pageLabel.textContent = `Página ${current} de ${pagesList.length}`;
+  const total = pagesList.length;
+  const left = pageFlip.getCurrentPageIndex(); // página izquierda del pliego (empieza en 0)
+  const isSpread = pageFlip.getOrientation() === "landscape" && left > 0 && left + 1 < total;
+  els.pageLabel.textContent = isSpread
+    ? `Páginas ${left + 1}–${left + 2} de ${total}`
+    : `Página ${left + 1} de ${total}`;
 }
 
 // ---------------------------------------------------------------- estado
@@ -168,8 +180,14 @@ async function init() {
     const res = await fetch(CONFIG.stickersUrl);
     if (!res.ok) throw new Error(`No se pudo cargar ${CONFIG.stickersUrl}`);
     const data = await res.json();
+    pageSize = data.page_size_px;
     stickers = data.stickers;
     pagesList = data.pages;
+    // Proporción de un pliego (dos páginas): el CSS la usa para no pasar del alto de la ventana
+    document.documentElement.style.setProperty("--spread-ratio", String((2 * pageSize[0]) / pageSize[1]));
+    els.hint.innerHTML =
+      `Los códigos de prueba son <code>PROTO-01</code> a <code>PROTO-${String(stickers.length).padStart(2, "0")}</code> ` +
+      `(uno por estampa, un solo uso).`;
 
     await store.load();
     buildPages();

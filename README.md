@@ -27,9 +27,30 @@ y abre http://localhost:8000
 | `js/store-local.js` | Capa de datos local; el contrato está documentado al inicio del archivo |
 | `js/app.js` | Flipbook, canje de códigos, botones de prueba |
 | `js/vendor/page-flip.browser.js` | Librería StPageFlip |
-| `data/stickers.json` | Posición de cada estampa en su página (en %) |
-| `data/codes.json` | Códigos de prueba `PROTO-01` a `PROTO-48` |
-| `assets/pages`, `assets/stickers` | Imágenes de páginas y estampas |
+| `data/stickers.json` | Tamaño de las páginas y hueco de cada estampa (en %). Lo genera `tools/build_assets.py` |
+| `data/codes.json` | Códigos de prueba `PROTO-01` a `PROTO-12` (uno por estampa). Lo genera el mismo script |
+| `assets/pages`, `assets/stickers` | Imágenes optimizadas (WebP) de páginas y estampas |
+| `tools/build_assets.py` | Prepara las imágenes y los datos a partir de los originales |
+
+## Cambiar las imágenes
+
+Las imágenes originales (PNG) no van en el proyecto: pesan mucho. Ponlas en una carpeta aparte con estos nombres:
+
+```
+page-01.png ... page-19.png        las 19 páginas (todas del mismo tamaño)
+sticker-01.png ... sticker-12.png  una estampa por cada página con hueco
+```
+
+y ejecuta, desde la carpeta del proyecto:
+
+```
+pip install pillow opencv-python-headless numpy
+python3 -I tools/build_assets.py --source ruta/a/originales
+```
+
+El script optimiza las imágenes, **detecta solo el hueco de cada estampa** y reescribe `data/stickers.json` y `data/codes.json`. Las estampas van en las páginas 6 a 17; para otro rango usa `--sticker-pages A-B`. Con `--debug carpeta` guarda imágenes con el hueco marcado para revisarlo.
+
+Cómo se acomoda la estampa dentro del hueco se cambia con `stickerFit` en `js/config.js`.
 
 ## Cambiar a Supabase más adelante
 

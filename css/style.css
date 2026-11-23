@@ -11,8 +11,9 @@
   /* Alto que ocupa todo lo que NO es el álbum (barra superior, márgenes, botones de página).
      El álbum usa el resto del alto de la ventana. Ajustar si cambia el diseño. */
   --chrome: 200px;
-  /* Proporción de dos páginas abiertas: (2 x 15 cm) / 21 cm */
-  --spread-ratio: 1.4286;
+  /* Proporción de dos páginas abiertas (ancho / alto). Valor de respaldo: js/app.js lo
+     recalcula con el tamaño real de las imágenes (data/stickers.json). */
+  --spread-ratio: 1.4142;
 }
 
 * { box-sizing: border-box; }

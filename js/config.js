@@ -8,20 +8,26 @@ export const CONFIG = {
   // Clave de localStorage (cambia el sufijo para empezar con datos limpios)
   storageKey: "album-prototipo-v1",
 
-  // Tamaño base de una página (misma proporción que las imágenes: 15 x 21)
-  page: { width: 300, height: 420 },
+  // Ancho base de una página. El alto y las proporciones salen de "page_size_px" en
+  // data/stickers.json (tamaño real de las imágenes), no hay que tocarlos a mano.
+  pageBaseWidth: 300,
+
+  // Cómo se acomoda la estampa dentro del hueco de la página:
+  //   "contain" = completa y sin deformar (puede dejar ver parte del hueco)
+  //   "cover"   = llena el hueco sin deformar (recorta los bordes de la estampa)
+  //   "fill"    = llena el hueco estirando la estampa
+  stickerFit: "contain",
 
   // Opciones del flipbook (StPageFlip)
   flip: {
     size: "stretch",
-    // Límites por página. Son muy altos a propósito: el tamaño real lo decide el CSS
-    // (ancho disponible y alto de la ventana), no estos valores.
+    // Límites del ancho por página. Son muy altos a propósito: el tamaño real lo decide el CSS
+    // (ancho disponible y alto de la ventana). Los límites de alto se calculan solos.
     minWidth: 240,
     maxWidth: 1400,
-    minHeight: 336,
-    maxHeight: 1960,
     maxShadowOpacity: 0.4,
-    showCover: false,
+    // La portada se ve sola (página 1) y el resto en pliegos de dos páginas
+    showCover: true,
     mobileScrollSupport: false,
     flippingTime: 700,
   },
