@@ -1,0 +1,23 @@
+# Entorno local completo: Supabase (oficial, autoalojado) + la página con Netlify CLI.
+# Uso:  docker compose up -d      (ver README, sección "Entorno local con Docker")
+include:
+  - path: supabase-docker/docker-compose.yml
+    env_file: supabase-docker/.env
+
+services:
+  web:
+    image: node:20-slim
+    container_name: album-web
+    working_dir: /app
+    volumes:
+      - .:/app
+      - npm-cache:/root/.npm
+    ports:
+      - "8888:8888"
+    environment:
+      - NETLIFY_DEV_NO_UPDATE_CHECK=1
+    command: >
+      sh -c "npx --yes netlify-cli@latest dev --dir . --port 8888 --offline"
+
+volumes:
+  npm-cache:

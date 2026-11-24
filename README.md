@@ -17,6 +17,34 @@ y abre http://localhost:8000
 1. Sube esta carpeta a un repositorio.
 2. En el repositorio: Settings → Pages → Source: rama `main`, carpeta `/ (root)`.
 
+## Entorno local con Docker (página + Supabase)
+
+Todo corre dentro de Docker. Solo necesitas Docker Desktop abierto; los comandos se ejecutan en PowerShell (o en cualquier terminal) dentro de la carpeta del proyecto, que puede estar en Windows. No hace falta WSL ni instalar nada más.
+
+Primera vez (una sola vez; crea `supabase-docker/.env` con contraseñas y llaves nuevas):
+
+```
+docker compose -f docker-compose.setup.yml run --rm setup
+```
+
+Después, cada vez que trabajes:
+
+```
+docker compose up -d      # levantar
+docker compose ps         # ver estado
+docker compose down       # apagar (los datos se conservan)
+```
+
+Opcional: abre `supabase-docker/.env` y cambia `DASHBOARD_PASSWORD` por la que prefieras.
+
+| Servicio | Dirección |
+|---|---|
+| Página | http://localhost:8888 |
+| API y Studio de Supabase | http://localhost:8000 (usuario y contraseña: `DASHBOARD_USERNAME` y `DASHBOARD_PASSWORD` del `.env`) |
+| Postgres | localhost:5432 |
+
+La URL de la API para la página es `http://localhost:8000` y la llave pública es `SUPABASE_PUBLISHABLE_KEY` (o `ANON_KEY`) del `.env`. El archivo `.env` contiene secretos: no se sube a Git.
+
 ## Estructura
 
 | Ruta | Contenido |

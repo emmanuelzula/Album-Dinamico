@@ -1,0 +1,20 @@
+# Preparación inicial (una sola vez): crea supabase-docker/.env con contraseñas y llaves nuevas.
+# Todo ocurre dentro de un contenedor: no necesitas WSL, openssl ni nada instalado en Windows.
+#   docker compose -f docker-compose.setup.yml run --rm setup
+services:
+  setup:
+    image: alpine:3.20
+    working_dir: /w
+    volumes:
+      - ./supabase-docker:/w
+    command:
+      - sh
+      - -c
+      - |
+        if [ -f .env ]; then echo "Ya existe supabase-docker/.env: no se toca."; exit 0; fi
+        apk add --no-cache openssl >/dev/null
+        cp .env.example .env
+        sh utils/generate-keys.sh --update-env >/dev/null
+        sed -i 's|^SITE_URL=.*|SITE_URL=http://localhost:8888|' .env
+        rm -f .env.old
+        echo "Listo: supabase-docker/.env creado."

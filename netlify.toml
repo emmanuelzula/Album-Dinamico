@@ -1,0 +1,8 @@
+# Configuración de Netlify (local y producción)
+[build]
+  publish = "."
+
+[dev]
+  framework = "#static"
+  port = 8888
+  publish = "."

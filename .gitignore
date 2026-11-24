@@ -1,0 +1,7 @@
+supabase-docker/.env
+supabase-docker/volumes/db/data
+supabase-docker/volumes/storage
+node_modules
+
+# Local Netlify folder
+.netlify
